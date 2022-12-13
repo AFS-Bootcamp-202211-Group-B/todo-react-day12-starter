@@ -1,0 +1,14 @@
+.toggle{
+    text-decoration: line-through;
+}
+
+ input{
+    width: 30%;
+    line-height: 2em;
+     margin: 15px;
+     text-align: left;
+ }
+
+ button{
+    line-height: 2em;
+ }
