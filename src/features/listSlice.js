@@ -21,23 +21,31 @@ const listSlice = createSlice({
                 
             },           
         ],
+
     reducers: {     
  
         addTodo: (state , action) => {
-            console.log(current(state));
-            console.log("sumValue:",action.payload);
             state.push ({
-                id: Date.now(),
-                
+                id: Date.now(),                
                 text: action.payload,
-                
                 done: false,
 
             });
         },
+    
+        changeToggle: (state, action) => {
+            for ( let index = 0; index < state.length; index++){
+                if(state[index].id == action.payload){
+                    state[index].done = !state[index].done;
+                }
+            }
+        },
+        deleteItem: (state, action) => {
+            return state.filter((todo) => todo.id != action.payload);
+        }
     },
 });
-export const { addTodo } = listSlice.actions;
+export const { addTodo,changeToggle,deleteItem } = listSlice.actions;
 
 
 export default listSlice.reducer;
