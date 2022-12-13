@@ -1,6 +1,6 @@
 import React,{useEffect} from "react";
 import { useDispatch } from 'react-redux'
-import { toggleTodo } from "./todoSlice";
+import { toggleTodo,deleteTodo} from "./todoSlice";
 
 export default function TodoItem(props) {
   const dispatch = useDispatch()
@@ -11,5 +11,6 @@ export default function TodoItem(props) {
             className={props.todo.done?"done":"notDone"}
           >
             {props.todo.text}
+            <span onClick={()=>dispatch(deleteTodo(props.todo.id))}>&times;</span>
           </div>
 }
