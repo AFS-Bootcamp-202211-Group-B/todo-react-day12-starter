@@ -1,21 +1,23 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import TodoGenerator from "./TodoGenerator";
 import TodoGroup from "./TodoGroup";
-import { addToDo2 } from "./todoListSlice";
+
+
 
 export default function TodoList() {
-  const [todos, setTodos] = useState([]);
-  const dispatch = useDispatch();
+  // const [todos, setTodos] = useState([]);
+  // const todos = useSelector((state) => state.todoList);
+
   const addTodo = (todo) => {
-    setTodos([...todos, todo]);
+    // setTodos([...todos, todo]);
     
-    dispatch(addToDo2());
+    // dispatch(addToDo());
   };
 
   return (
     <div>
-      <TodoGroup todos={todos} />
+      <TodoGroup />
       <TodoGenerator addTodo={addTodo} />
     </div>
   );

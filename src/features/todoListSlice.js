@@ -11,13 +11,18 @@ const todoListSlice = createSlice({
         }],
 
     reducers: {
-        addToDo2:() =>{
-            console.log("123")
+        addToDo:(state,action) => {
+            const todo = {
+                id: Date.now(),
+                text: action.payload,
+                done: false
+            }
+            state.push(todo);
         }
     },
 });
 
-export const {addToDo2} = todoListSlice.actions;
+export const {addToDo} = todoListSlice.actions;
 
 
 
