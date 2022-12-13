@@ -18,11 +18,24 @@ const todoListSlice = createSlice({
                 done: false
             }
             state.push(todo);
+        },
+        changeDone:(state,action) => {
+            for ( let index = 0; index < state.length; index++){
+                if(state[index].id === action.payload){
+                    state[index].done = !state[index].done;
+                }
+            }
+        },
+        deleteToDo:(state,action) => {
+            return state.filter(item => item.id !== action.payload);
+
         }
+
     },
 });
 
-export const {addToDo} = todoListSlice.actions;
+export const {addToDo,changeDone,deleteToDo} = todoListSlice.actions;
+
 
 
 
