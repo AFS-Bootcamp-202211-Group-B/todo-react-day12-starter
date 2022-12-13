@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import TodoGenerator from "./TodoGenerator";
 import TodoGroup from "./TodoGroup";
-
+import { addToDo } from "./todoListSlice";
 
 
 export default function TodoList() {
@@ -18,7 +18,7 @@ export default function TodoList() {
   return (
     <div>
       <TodoGroup />
-      <TodoGenerator addTodo={addTodo} />
+      <TodoGenerator addTodo={addToDo} />
     </div>
   );
 }
