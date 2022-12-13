@@ -22,9 +22,14 @@ const todoSlice = createSlice({
                 done: false
             });
         },
+        updateTodo: (state, action) => {
+            state.filter(todo => todo.id === action.payload).map(filteredTodo => {
+                filteredTodo.done = !filteredTodo.done
+            });
+        },
 
     }
 })
 
-export const { addTodo } = todoSlice.actions;
+export const { addTodo, updateTodo } = todoSlice.actions;
 export default todoSlice.reducer;

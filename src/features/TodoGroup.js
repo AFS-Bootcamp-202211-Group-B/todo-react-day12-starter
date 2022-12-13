@@ -4,6 +4,6 @@ import { useSelector } from "react-redux";
 export default function TodoGroup() {
   const todos = useSelector((state) => state.todo);
   return todos.map((todo, index) => {
-    return <TodoItem key={index} todo={todo.text} />;
+    return <TodoItem key={index} todo={todo} />;
   });
 }
