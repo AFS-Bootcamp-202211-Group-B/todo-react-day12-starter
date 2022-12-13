@@ -16,10 +16,24 @@ const todoSlice = createSlice({
     ]
     ,
     reducers: {
+        addTodo: (state, action) => {
+            state.push({
+                id: Date.now(),
+                text: action.payload,
+                done: false
+            })
+        },
+        toggleTodo: (state, action)=>{
+            for (let index = 0; index < state.length; index++) {
+                if(state[index].id===action.payload){
+                    state[index].done=!state[index].done
+                }                
+            }
 
+        }
     }
 
 })
 
 export default todoSlice.reducer;
-// export const { updateSize, updateSum, resetSum } = counterSlice.actions
+export const { addTodo,toggleTodo } = todoSlice.actions
