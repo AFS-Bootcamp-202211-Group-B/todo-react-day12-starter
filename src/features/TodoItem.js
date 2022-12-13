@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 export default function TodoItem(props) {
     const dispatch = useDispatch();
     const [itemClass, setItemClass] = useState("");
-    const onClickItem = (event) => {
+    const onClickItem = () => {
         if (itemClass === "") {
             setItemClass("done");
         } else {
@@ -13,7 +13,7 @@ export default function TodoItem(props) {
         }
         dispatch(toggleTodo(props.id));
     };
-    const onClickCross = (event) => {
+    const onClickCross = () => {
         dispatch(removeTodo(props.id));
     };
     return (
