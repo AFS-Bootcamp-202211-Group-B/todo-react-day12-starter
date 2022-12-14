@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.done{
+  text-decoration-line: line-through
+}
+
+.close-button{
+  color: grey;
+  font-weight: 600;
+  cursor: pointer;
+}
