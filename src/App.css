@@ -40,3 +40,10 @@
 .done{
   text-decoration-line: line-through
 }
+
+.close-button{
+  font-size: 30px;
+  color: grey;
+  font-weight: 600;
+  cursor: pointer;
+}

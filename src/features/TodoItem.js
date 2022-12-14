@@ -11,6 +11,6 @@ export default function TodoItem(props) {
             className={props.todo.done?"done":"notDone"}
           >
             {props.todo.text}
-            <span onClick={()=>dispatch(deleteTodo(props.todo.id))}>&times;</span>
+            <span onClick={()=>dispatch(deleteTodo(props.todo.id))} className="close-button">&times;</span>
           </div>
 }
